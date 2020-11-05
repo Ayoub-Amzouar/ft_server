@@ -26,9 +26,3 @@ tar -xf phpMyAdmin-4.9.7-english.tar.xz
 mv phpMyAdmin-4.9.7-english phpmyadmin
 
 mv /phpmyadmin /var/www/html
-
-# Running some services
-
-nginx
-
-service php7.3-fpm start
