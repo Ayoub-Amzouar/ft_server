@@ -1,9 +1,7 @@
 FROM debian:buster
 
-COPY ./srcs/install.sh /
-COPY ./srcs/default /
-COPY ./srcs/run.sh /
+COPY ./srcs/* /
 
 RUN bash ./install.sh
 
-CMD ["/bin/sh", "/run.sh"]
+CMD bash ./run.sh

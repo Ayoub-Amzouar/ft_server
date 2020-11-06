@@ -26,3 +26,12 @@ tar -xf phpMyAdmin-4.9.7-english.tar.xz
 mv phpMyAdmin-4.9.7-english phpmyadmin
 
 mv /phpmyadmin /var/www/html
+
+# Installing MySql
+
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.16-1_all.deb
+apt-get install lsb-release -y
+cp -R debconf /var/cache
+DEBIAN_FRONTEND=noninteractive dpkg -i mysql-apt-config_0.8.16-1_all.deb
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server
