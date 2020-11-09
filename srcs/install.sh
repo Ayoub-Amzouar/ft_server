@@ -4,16 +4,19 @@
 
 apt-get update && apt-get install build-essential -y
 
+
 # And here we install nginx
 
 apt-get install nginx -y
 mv -f /default /etc/nginx/sites-available/
 
+
 # Installing wget command
 
-apt-get install -y wget
+apt-get install wget -y 
 
 rm -rf /var/lib/apt/list/*
+
 
 # Installing phpmyadmin and php
 
@@ -27,11 +30,14 @@ mv phpMyAdmin-4.9.7-english phpmyadmin
 
 mv /phpmyadmin /var/www/html
 
+
 # Installing MySql
 
-wget https://dev.mysql.com/get/mysql-apt-config_0.8.16-1_all.deb
 apt-get install lsb-release -y
-cp -R debconf /var/cache
-DEBIAN_FRONTEND=noninteractive dpkg -i mysql-apt-config_0.8.16-1_all.deb
+apt-get install gnupg -y
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.16-1_all.deb
+cp -R /debconf /var/cache
+DEBIAN_FRONTEND=noninteractive dpkg -i ./mysql-apt-config*
 apt-get update
-DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server
+apt-get upgrade -y
+DEBIAN_FRONTEND=noninteractive apt-get install mysql-server -y

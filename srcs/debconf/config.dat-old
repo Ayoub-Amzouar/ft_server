@@ -109,26 +109,6 @@ Template: debconf/priority
 Value: high
 Owners: debconf
 
-Name: fontconfig/enable_bitmaps
-Template: fontconfig/enable_bitmaps
-Value: false
-Owners: fontconfig-config
-
-Name: fontconfig/hinting_style
-Template: fontconfig/hinting_style
-Value: hintslight
-Owners: fontconfig-config
-
-Name: fontconfig/hinting_type
-Template: fontconfig/hinting_type
-Value: Native
-Owners: fontconfig-config
-
-Name: fontconfig/subpixel_rendering
-Template: fontconfig/subpixel_rendering
-Value: Automatic
-Owners: fontconfig-config
-
 Name: glibc/disable-screensaver
 Template: glibc/disable-screensaver
 Owners: libc6, libc6:amd64
@@ -242,13 +222,14 @@ Owners: mysql-apt-config
 Flags: seen
 Variables:
  selected_preview = Disabled
- selected_server = mysql-8.0
+ selected_server = mysql-5.7
  selected_tools = Enabled
 
 Name: mysql-apt-config/select-server
 Template: mysql-apt-config/select-server
-Value: mysql-8.0
+Value: mysql-5.7
 Owners: mysql-apt-config
+Flags: seen
 Variables:
  installed_server = no MySQL Server
  server_versions = mysql-5.7, mysql-8.0, mysql-cluster-7.5, mysql-cluster-7.6, mysql-cluster-8.0
@@ -266,10 +247,6 @@ Owners: mysql-apt-config
 Name: mysql-apt-config/unsupported-platform
 Template: mysql-apt-config/unsupported-platform
 Owners: mysql-apt-config
-
-Name: nginx/log-symlinks
-Template: nginx/log-symlinks
-Owners: nginx-common
 
 Name: tzdata/Areas
 Template: tzdata/Areas
@@ -330,24 +307,4 @@ Owners: tzdata
 Name: tzdata/Zones/US
 Template: tzdata/Zones/US
 Owners: tzdata
-
-Name: ucf/changeprompt
-Template: ucf/changeprompt
-Owners: ucf
-
-Name: ucf/changeprompt_threeway
-Template: ucf/changeprompt_threeway
-Owners: ucf
-
-Name: ucf/conflicts_found
-Template: ucf/conflicts_found
-Owners: ucf
-
-Name: ucf/show_diff
-Template: ucf/show_diff
-Owners: ucf
-
-Name: ucf/title
-Template: ucf/title
-Owners: ucf
 
