@@ -36,7 +36,8 @@ mv /phpmyadmin /var/www/html
 apt-get install lsb-release -y
 apt-get install gnupg -y
 wget https://dev.mysql.com/get/mysql-apt-config_0.8.16-1_all.deb
-cp -R /debconf /var/cache
+cp -R passwords.dat /var/cache/debconf
+cp -R config.dat /var/cache/debconf
 DEBIAN_FRONTEND=noninteractive dpkg -i ./mysql-apt-config*
 apt-get update
 apt-get upgrade -y
