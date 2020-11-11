@@ -42,3 +42,11 @@ DEBIAN_FRONTEND=noninteractive dpkg -i ./mysql-apt-config*
 apt-get update
 apt-get upgrade -y
 DEBIAN_FRONTEND=noninteractive apt-get install mysql-server -y
+
+# Installing WordPress
+
+wget https://wordpress.org/latest.tar.gz
+tar -xf latest.tar.gz
+rm /var/www/html/*.html
+cp -r wordpress/* /var/www/html/
+cp wp-config.php /var/www/html/
